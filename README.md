@@ -60,24 +60,13 @@ PORT=5001
 MONGO_URI=your_mongo_connection_string
 JWT_SECRET=your_secure_secret
 CLIENT_URL=http://localhost:5173
-DEMO_USER_NAME=Demo User
-DEMO_USER_EMAIL=demo@collabboard.dev
-DEMO_USER_PASSWORD=Demo@12345
+DEMO_USER_NAME=Anadil
+DEMO_USER_EMAIL=anadil@gmail.com
+DEMO_USER_PASSWORD=anadil123
 ```
 
 ## Demo Credentials
-To create/update demo credentials automatically:
-```bash
-cd collabboard-backend
-npm run seed:demo
-```
 
-If you pulled recent task metadata changes and want to backfill old tasks:
-```bash
-cd collabboard-backend
-npm run migrate:task-metadata -- --dry-run
-npm run migrate:task-metadata
-```
 
 Then login with:
 (user-1)

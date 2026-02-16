@@ -9,9 +9,10 @@ const { logger } = require("./utils/logger");
 const server = http.createServer(app);
 initSocket(server, env.CLIENT_URL);
 
+const PORT = process.env.PORT || 5000;
 connectDB()
   .then(() => {
-    server.listen(env.PORT, () => {
+    server.listen(PORT, () => {
       logger.info(`Server running on port ${env.PORT}`);
     });
   })
