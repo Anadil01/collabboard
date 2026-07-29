@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/auth.store";
 
+
 export default function LandingPage() {
   const token = useAuthStore((s) => s.token);
   const user = useAuthStore((s) => s.user);
@@ -95,10 +96,8 @@ export default function LandingPage() {
           </Link>
 
           <div className="hidden items-center space-x-10 text-sm font-medium text-slate-600 md:flex">
-            <a className="transition-colors hover:text-[#2b8cee]" href="#features">Features</a>
-            <a className="transition-colors hover:text-[#2b8cee]" href="#pricing">Pricing</a>
-            <a className="transition-colors hover:text-[#2b8cee]" href="#resources">Resources</a>
-            <a className="transition-colors hover:text-[#2b8cee]" href="#enterprise">Enterprise</a>
+            
+            <Link className="transition-colors hover:text-[#2b8cee]" to="/pricing">Pricing</Link>
           </div>
 
           <div className="flex items-center gap-4">
@@ -381,7 +380,7 @@ export default function LandingPage() {
               <ul className="space-y-4 text-sm text-slate-500">
                 <li><Link className="transition-colors hover:text-[#2b8cee]" to="/help">Help Center</Link></li>
                 <li><Link className="transition-colors hover:text-[#2b8cee]" to="/docs">Security</Link></li>
-                <li><a className="transition-colors hover:text-[#2b8cee]" href="mailto:support@collabboard.dev">Contact</a></li>
+                <li><Link className="transition-colors hover:text-[#2b8cee]" to="/contact">Contact </Link></li>
                 <li><Link className="transition-colors hover:text-[#2b8cee]" to="/docs">Status</Link></li>
               </ul>
             </div>
@@ -392,6 +391,8 @@ export default function LandingPage() {
             <div className="flex gap-8 text-sm text-slate-400">
               <Link className="hover:text-slate-600" to="/privacy">Privacy Policy</Link>
               <Link className="hover:text-slate-600" to="/terms">Terms of Service</Link>
+              <Link className="hover:text-slate-600" to="/refunds">Refund Policy</Link>
+              <Link className="hover:text-slate-600" to="/shipping">Shipping Policy</Link>
             </div>
           </div>
         </div>

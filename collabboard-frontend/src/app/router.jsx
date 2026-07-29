@@ -10,6 +10,12 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Board = lazy(() => import("../pages/Board"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 const InfoPages = lazy(() => import("../pages/InfoPages"));
+const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
+const Terms = lazy(() => import("../pages/Terms"));
+const RefundPolicy = lazy(() => import("../pages/RefundPolicy"));
+const ShippingPolicy = lazy(() => import("../pages/ShippingPolicy"));
+const Contact = lazy(() => import("../pages/Contact"));
+const Pricing = lazy(()=> import("../components/pricing/Pricing"));
 
 function Protected({ children }) {
   const token = useAuthStore(s => s.token);
@@ -30,11 +36,15 @@ export default function Router() {
           <Route path="/login" element={<PublicOnly><Login /></PublicOnly>} />
           <Route path="/signup" element={<PublicOnly><Signup /></PublicOnly>} />
           <Route path="/" element={<LandingPage />} />
-          <Route path="/privacy" element={<InfoPages />} />
-          <Route path="/terms" element={<InfoPages />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/help" element={<InfoPages />} />
           <Route path="/docs" element={<InfoPages />} />
+          <Route path="/refunds" element={<RefundPolicy />} />
+          <Route path="/shipping" element={<ShippingPolicy />} />
           <Route path="/shortcuts" element={<InfoPages />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/pricing" element={<Pricing />} />
 
           <Route element={
             <Protected>
